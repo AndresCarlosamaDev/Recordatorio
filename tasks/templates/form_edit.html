@@ -26,20 +26,20 @@
 
 			<label for="cars">Prioridad</label>
 
-			{% if tarea.descripcion == "Baja" %}
+			{% if tarea.prioridad == "Baja" %}
 				<select class="cars btn btn-dark" name="prioridad">
 					<option value="Baja" selected>Baja</option>
 					<option value="Intermedia">Intermedia</option>
 					<option value="Alta">Alta</option>
 				</select>
 
-			{% elif tarea.descripcion == "Intermedia" %}
+			{% elif tarea.prioridad == "Intermedia" %}
 				<select class="cars btn btn-dark" name="prioridad">
 					<option value="Baja">Baja</option>
 					<option value="Intermedia" selected>Intermedia</option>
 					<option value="Alta">Alta</option>
 				</select>
-			{% elif tarea.descripcion == "Alta" %}
+			{% elif tarea.prioridad == "Alta" %}
 				<select class="cars btn btn-dark" name="prioridad">
 					<option value="Baja">Baja</option>
 					<option value="Intermedia">Intermedia</option>
