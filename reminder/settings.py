@@ -93,9 +93,20 @@ WSGI_APPLICATION = 'reminder.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600)}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',
+        'HOST': 'containers-us-west-195.railway.app',
+        'PORT': '6197',
+        'USER' : 'root',
+        'PASSWORD': '6y5B5xjiGIPKZqa6bwsS'
+    }
+}
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://postgres:postgres@localhost:5432/mysite',
+#         conn_max_age=600)}
 
 
 # Password validation
