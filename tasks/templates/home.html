@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- CDN Boostrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="//use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+
+
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="titulo">
+        <h1>Administrador de <b>Tareas</b></h1>
+    </div>
+
+    {% for tarea in tareas %}
+    <div class="contend-gnrl">
+        <div class="usuarios">
+            <p><i>Enviado de </i><b>{{ tarea.envia }}</b><i> para </i><b>{{ tarea.recibe }}</b></p>
+            <h2>{{ tarea.descripcion }}</h2>
+            <p>{{ tarea.fecha }} | <b>Prioridad:</b> {{ tarea.prioridad }}</p>
+        </div>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-grou" role="group">
+                <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false"></button>
+                <ul class="dropdown-menu">
+                    <li><a class="btn btn-light" href="form_edit/{{ tarea.id }}">Actualizar</a></li>
+                    <li><a class="btn btn-danger" href="borrar/{{ tarea.id }}">Eliminar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="space"></div>
+    {% endfor %}
+    
+    <div class="form-group">
+        <a href="form_add/" type="submit" class="btn btn-dark"><i class="fas fa-plus"></i></a>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
